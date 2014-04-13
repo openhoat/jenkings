@@ -1,0 +1,11 @@
+<div class="header" ng-controller="NavbarCtrl">
+  <ul class="nav nav-pills pull-right">
+    <li ng-repeat="item in $root.menu" ng-class="{ active: isActive(item.link) }">
+      <a ng-href="{{ item.link }}">{{ item.title | translate }}</a>
+    </li>
+  </ul>
+  <h3 id="pageTitle" class="text-muted">
+    <a href="/">{{ 'Jenkings' | translate }}</a>
+    <span id="pageSubtitle">- {{ 'smart UI for Jenkins' | translate }}</span>
+  </h3>
+</div>

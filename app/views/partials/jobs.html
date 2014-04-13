@@ -1,0 +1,33 @@
+<div id="jobList" class="panel panel-default">
+  <div class="panel-heading">{{ 'View' | translate }} <strong>{{ viewName }}</strong></div>
+  <div class="panel-body">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th class="index col-md-1">#</th>
+        <th class="state col-md-3">{{ 'State' | translate }}</th>
+        <th class="name">{{ 'Name' | translate }}</th>
+        <th class="actions">{{ 'Actions' | translate }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="job in jobs" title="{{ job.name }} : {{ jobStyles[$index].stateTitle | translate }}"
+          class="jobRow">
+        <td class="index">{{ $index + 1 }}</td>
+        <td class="state">
+          <span class="badge alert-{{ jobStyles[$index].stateClass }}">{{ jobStyles[$index].state | translate }}</span>
+        </td>
+        <td class="name">{{ job.name }}</td>
+        <td class="actions">
+          <a href="/job/{{ job.name }}" class="btn btn-default btn-xs btn-success">
+            <span class="glyphicon glyphicon-info-sign" title="{{ 'Details' | translate }}"></span>
+          </a>
+          <button type="button" ng-click="run(job)" class="btn btn-default btn-xs btn-primary">
+            <span class="glyphicon glyphicon-play" title="{{ 'Play' | translate }}"></span>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

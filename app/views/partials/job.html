@@ -1,0 +1,36 @@
+<h3>{{ 'Job' | translate }} <strong>{{ job.displayName }}</strong></h3>
+<div id="jobDetails" class="panel panel-default">
+  <div class="panel-heading">{{ 'Health report' | translate }}</div>
+  <div class="panel-body">
+    <img class="health" src="{{ '/images/jenkins/' + job.healthReport[0].iconUrl }}">
+    <ul>
+      <li>{{ job.healthReport[0].description }}</li>
+      <li>{{ 'Score' | translate }} : {{ job.healthReport[0].score }}</li>
+      <th class="actions">{{ 'Actions' | translate }}</th>
+    </ul>
+  </div>
+</div>
+
+<div id="buildList" class="panel panel-default">
+  <div class="panel-heading">{{ 'Builds' | translate }}</div>
+  <div class="panel-body">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th class="index col-md-1">#</th>
+        <th class="actions">{{ 'Actions' | translate }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="build in job.builds" class="buildRow">
+        <td class="index">{{ build.number }}</td>
+        <td class="actions">
+          <a href="/build/{{ job.name }}/{{ build.number }}" class="btn btn-default btn-xs btn-success">
+            <span class="glyphicon glyphicon-info-sign"></span> {{ 'Details' | translate }}
+          </a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<h3>{{ 'Build' | translate }} <strong>{{ build.fullDisplayName }}</strong></h3>
+<div id="buildDetails" class="panel panel-default">
+  <div class="panel-heading">{{ 'Build details' | translate }}</div>
+  <div class="panel-body">
+    <ul>
+      <li>{{ 'ID' | translate }} : {{ build.id }}</li>
+      <li>{{ 'En cours de construction' | translate }} : {{ build.building ? 'yes' : 'no' | translate }}</li>
+      <li>{{ 'Duration' | translate }} : {{ build.duration / 1000 }} {{ 'seconds' | translate }}</li>
+      <li>{{ 'Estimated duration' | translate }} : {{ build.estimatedDuration / 1000 }} {{ 'seconds' | translate }}</li>
+      <li>{{ 'Result' | translate }} : {{ build.result.toLowerCase() | translate }}</li>
+      <li>{{ 'Timestamp' | translate }} : {{ build.timestamp }}</li>
+    </ul>
+    <a href="/build/{{ jobName }}/{{ build.number }}/logs" class="btn btn-default btn-xs btn-info">
+      <span class="glyphicon glyphicon-eye-open"></span> {{ 'Logs' | translate }}
+    </a>
+  </div>
+</div>

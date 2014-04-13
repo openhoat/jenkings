@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+  <div class="panel-heading">{{ 'Settings' | translate }}</div>
+  <div class="panel-body">
+    <form role="form">
+      <div class="form-group">
+        <label for="jenkinsBaseUrl">{{ 'Jenkins URL' | translate }}</label>
+        <input type="text" ng-model="$root.jenkinsBaseUrl" class="form-control" id="jenkinsBaseUrl">
+      </div>
+      <div class="form-group">
+        <label for="login">{{ 'Login' | translate }}</label>
+        <input type="text" ng-model="$root.login" class="form-control" id="login"
+               placeholder="{{ 'Jenkins login' | translate }}">
+      </div>
+      <div class="form-group">
+        <label for="password">{{ 'Password' | translate }}</label>
+        <input type="password" ng-model="$root.password" class="form-control" id="password"
+               placeholder="{{ 'Jenkins password' | translate }}">
+      </div>
+      <div class="form-group">
+        <label for="login">{{ 'API token' | translate }}</label>
+        <input type="text" ng-model="$root.apiToken" class="form-control" id="apiToken"
+               placeholder="{{ 'Jenkins account API token' | translate }}">
+      </div>
+      <div class="form-group">
+        <label for="defaultView">{{ 'Default view' | translate }}</label>
+        <input type="text" ng-model="$root.defaultView" class="form-control" id="defaultView" placeholder="All">
+      </div>
+      <div class="form-group">
+        <label for="refreshFreq">{{ 'Refresh delay' | translate }}</label>
+
+        <div class="input-group">
+          <input type="text" ng-model="$root.refreshFreq" class="form-control" id="refreshFreq">
+          <span class="input-group-addon">{{ 'seconds' | translate }}</span>
+        </div>
+      </div>
+      <button ng-click="save()" type="submit" class="btn btn-default">{{ 'Save' | translate }}</button>
+    </form>
+  </div>
+</div>
