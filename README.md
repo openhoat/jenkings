@@ -14,11 +14,11 @@ Informations needed to connect to your CI are client side only, and are availabl
 Fork this project, and install it with :
 
     # npm install
-		# bower install
+	# bower install
 
 To start the server :
 
-		# npm start
+	# npm start
 
 ## Features :
 
