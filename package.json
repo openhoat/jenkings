@@ -1,6 +1,32 @@
 {
   "name": "jenkings",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "Smart UI for Jenkins",
+  "main": "server",
+  "author": {
+    "name": "Olivier Penhoat",
+    "email": "openhoat@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/openhoat/jenkings.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openhoat/jenkings/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/openhoat/jenkings/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "start": "node server"
+  },
   "dependencies": {
     "express": "3.4.3",
     "lodash": "2.4.1",
@@ -55,11 +81,5 @@
     "grunt-node-inspector": "0.1.3",
     "grunt-nodemon": "0.2.0",
     "open": "0.0.4"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "grunt test"
   }
 }
