@@ -30,4 +30,7 @@ To start the server :
 - Build details
 - Build logs
 
+
+Jenkings is powered by nodejs, angularjs, bootstrap and more...
+
 Enjoy !
