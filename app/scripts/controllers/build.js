@@ -17,8 +17,10 @@ angular.module('app')
       httpConfig.params.jenkinsApiUrl = $rootScope.jenkinsBaseUrl
         + '/job/' + jobName + '/' + buildNumber
         + '/api/json';
+      $rootScope.addAlert({ msg: 'Loading...', type: 'warning' });
       $http(httpConfig)
         .success(function (data, status, header, config, statusText) {
+          $rootScope.closeAlert();
           $scope.build = data;
         })
         .error($rootScope.errorHandler);

@@ -55,26 +55,31 @@ angular.module('app', [
 
     $rootScope.alerts = [];
 
-    $rootScope.addAlert = function (alert, autoCloseDelay) {
-      if (alert.msg) {
-        $translate(alert.msg).then(function (msg) {
-          alert.msg = msg;
-          $rootScope.alerts.push(alert);
-          if (autoCloseDelay) {
-            (function (index) {
-              window.setTimeout(function () {
-                $rootScope.$apply(function () {
-                  $rootScope.closeAlert(index);
-                });
-              }, autoCloseDelay);
-            })($rootScope.alerts.length - 1);
+    $rootScope.addAlert = function (alert, autoCloseDelay, callback) {
+      $translate(alert.msg).then(function (msg) {
+        var alertIndex;
+        alert.msg = msg;
+        $rootScope.alerts.push(alert);
+        alertIndex = $rootScope.alerts.length - 1;
+        if (autoCloseDelay) {
+          (function (index) {
+            window.setTimeout(function () {
+              $rootScope.$apply(function () {
+                $rootScope.closeAlert(index);
+              });
+            }, autoCloseDelay);
+          })(alertIndex);
+          if (callback) {
+            callback(null, alertIndex);
           }
-
-        });
-      }
+        }
+      });
     };
 
     $rootScope.closeAlert = function (index) {
+      if (typeof index !== 'number') {
+        index = $rootScope.alerts.length - 1;
+      }
       $rootScope.alerts.splice(index, 1);
     };
 

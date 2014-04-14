@@ -75,6 +75,9 @@ angular.module('app')
       if (typeof withChangeAlert === 'undefined') {
         withChangeAlert = true;
       }
+      if (!withChangeAlert) {
+        $rootScope.addAlert({ msg: 'Loading...', type: 'warning' });
+      }
       httpConfig = {
         method: 'GET',
         url: '/api/jenkins',
@@ -89,6 +92,7 @@ angular.module('app')
       $http(httpConfig)
         .success(function (data, status, header, config, statusText) {
           if (!angular.equals(data.jobs, $scope.jobs)) {
+            $rootScope.closeAlert();
             if (withChangeAlert) {
               $rootScope.addAlert({
                 type: 'success',

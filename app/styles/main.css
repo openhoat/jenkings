@@ -4,9 +4,11 @@ body {
   padding-bottom: 20px;
 }
 
+/*
 #alertBox {
-  height: 50px;
+  min-height: 50px;
 }
+*/
 
 #jobList thead th.state {
   text-align: center;
@@ -28,15 +30,27 @@ body {
   animation: blink 0.5s steps(5, start) infinite;
   -webkit-animation: blink 0.5s steps(5, start) infinite;
 }
+
 @keyframes blink {
-  to { visibility: hidden; }
+  to {
+    visibility: hidden;
+  }
 }
+
 @-webkit-keyframes blink {
-  to { visibility: hidden; }
+  to {
+    visibility: hidden;
+  }
 }
 
 img.health {
   float: right;
+}
+
+.loading {
+  font-size: small;
+  font-style: italic;
+  font-weight: bold;
 }
 
 #logsContent {

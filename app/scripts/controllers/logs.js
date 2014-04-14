@@ -18,8 +18,10 @@ angular.module('app')
       httpConfig.params.jenkinsApiUrl = $rootScope.jenkinsBaseUrl
         + '/job/' + jobName + '/' + buildNumber
         + '/logText/progressiveText';
+      $rootScope.addAlert({ msg: 'Loading...', type: 'warning' });
       $http(httpConfig)
         .success(function (data, status, header, config, statusText) {
+          $rootScope.closeAlert();
           $scope.logs = data.substring(1, data.length - 1).replace(/\\r\\n/g, '\r');
           $scope.noRows = $scope.logs.split('\r').length + 1;
         })
@@ -27,5 +29,4 @@ angular.module('app')
     }
 
     loadJobBuildInfos($routeParams.jobName, $routeParams.buildNumber);
-
   });

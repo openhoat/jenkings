@@ -26,7 +26,7 @@
 <div class="container">
   <div ng-include="'partials/navbar'"></div>
   <div ng-include="'partials/alerts'"></div>
-  <div ng-view></div>
+  <div ng-view ng-cloak></div>
   <div class="footer">
     <p>{{ '♥ from the Jenkings team' | translate }}</p>
   </div>
@@ -47,7 +47,8 @@
 <script src="bower_components/ngstorage/ngStorage.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/angular-translate/angular-translate.min.js"></script>
-<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<script
+    src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/navbar.js"></script>
