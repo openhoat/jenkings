@@ -27,7 +27,9 @@ require('./lib/routes')(app);
 httpServer = http.createServer(app);
 
 if (config.server.socket) {
-  fs.unlinkSync(config.server.socket);
+  if (fs.existsSync(config.server.socket)) {
+    fs.unlinkSync(config.server.socket);
+  }
   httpServer.listen(config.server.socket, function () {
     console.log('Http server listening on socket %s in %s mode', config.server.socket, app.get('env'));
     fs.chmodSync(config.server.socket, '660');
