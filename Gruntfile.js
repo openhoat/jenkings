@@ -63,7 +63,7 @@ module.exports = function (grunt) {
       },
       jsTest: {
         files: ['test/client/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'karma']
+        tasks: ['newer:jshint:test']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -397,19 +397,11 @@ module.exports = function (grunt) {
     //   dist: {}
     // },
 
-    // Test settings
-    karma: {
-      unit: {
-        configFile: 'karma.conf.js',
-        singleRun: true
-      }
-    },
-
     mochaTest: {
       options: {
         reporter: 'spec'
       },
-      src: ['test/server/**/*.js']
+      src: ['spec/server/**/*Spec.js']
     },
 
     env: {
@@ -478,8 +470,7 @@ module.exports = function (grunt) {
       return grunt.task.run([
         'clean:server',
         'concurrent:test',
-        'autoprefixer',
-        'karma'
+        'autoprefixer'
       ]);
     }
 

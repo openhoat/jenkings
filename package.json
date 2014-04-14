@@ -1,6 +1,6 @@
 {
   "name": "jenkings",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Smart UI for Jenkins",
   "main": "server",
   "author": {
@@ -69,11 +69,6 @@
     "karma-jasmine": "0.1.5",
     "karma-chrome-launcher": "0.1.2",
     "requirejs": "2.1.10",
-    "karma-requirejs": "0.2.1",
-    "karma-coffee-preprocessor": "0.1.2",
-    "karma-phantomjs-launcher": "0.1.1",
-    "karma": "0.10.9",
-    "karma-ng-html2js-preprocessor": "0.1.0",
     "grunt-mocha-test": "0.8.1",
     "supertest": "0.8.2",
     "should": "2.1.0",
