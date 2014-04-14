@@ -5,6 +5,7 @@ angular.module('app')
     $scope.save = function () {
       $localStorage.jenkinsLogin = $rootScope.login;
       $localStorage.jenkinsPassword = $rootScope.password;
+      $rootScope.menu = null;
       $location.path('/');
     };
   });

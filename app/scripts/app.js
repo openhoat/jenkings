@@ -48,7 +48,7 @@ angular.module('app', [
   .run(function ($rootScope, $location, $localStorage, $translate) {
     $rootScope.jenkinsBaseUrl = $localStorage.jenkinsBaseUrl || 'http://ci.myserver.com/';
     $rootScope.refreshFreq = $localStorage.refreshFreq || 10;
-    $rootScope.defaultView = $localStorage.defaultView;
+    $rootScope.defaultView = $localStorage.defaultView || 'All';
     $rootScope.alerts = [];
 
     $rootScope.addAlert = function (alert, autoCloseDelay) {
