@@ -47,8 +47,12 @@ angular.module('app', [
   })
   .run(function ($rootScope, $location, $localStorage, $translate) {
     $rootScope.jenkinsBaseUrl = $localStorage.jenkinsBaseUrl || 'http://ci.myserver.com/';
-    $rootScope.refreshFreq = $localStorage.refreshFreq || 10;
+    $rootScope.login = $localStorage.jenkinsLogin;
+    $rootScope.password = $localStorage.jenkinsPassword;
+    $rootScope.apiToken = $localStorage.apiToken;
     $rootScope.defaultView = $localStorage.defaultView || 'All';
+    $rootScope.refreshFreq = $localStorage.refreshFreq || 10;
+
     $rootScope.alerts = [];
 
     $rootScope.addAlert = function (alert, autoCloseDelay) {
@@ -94,8 +98,6 @@ angular.module('app', [
         window.clearInterval($rootScope.pollingTimer);
         $rootScope.pollingTimer = null;
       }
-      $rootScope.login = $localStorage.jenkinsLogin;
-      $rootScope.password = $localStorage.jenkinsPassword;
       if (!$rootScope.login && $location.path() !== '/settings') {
         $location.path('/settings');
       }
