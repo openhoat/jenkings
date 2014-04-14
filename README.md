@@ -31,7 +31,12 @@ To start the server :
 - Build logs
 - Multi-language support
 
+## See it in action :
+
+[jenkings.app.nodeshub.com](http://jenkings.app.nodeshub.com/)
+
 
 Jenkings is powered by nodejs, angularjs, bootstrap and more...
+
 
 Enjoy !
