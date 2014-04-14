@@ -29,6 +29,7 @@ To start the server :
 - Builds list of a job
 - Build details
 - Build logs
+- Multi-language support
 
 
 Jenkings is powered by nodejs, angularjs, bootstrap and more...

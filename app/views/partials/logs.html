@@ -1,4 +1,14 @@
-<h3>{{ 'Build logs' | translate }} <strong>{{ jobName }} #{{ buildNumber }}</strong></h3>
 <div id="buildLogs" class="panel panel-default">
-  <textarea id="logsContent" class="form-control" rows="{{ noRows }}" ng-model="logs" disabled></textarea>
+  <div class="panel-heading">{{ 'Build logs' | translate }} <strong>{{ jobName }} #{{ buildNumber }}</strong></div>
+  <div class="panel-body">
+
+    <textarea id="logsContent" class="form-control" rows="{{ noRows }}" ng-model="logs" disabled></textarea>
+    <br/>
+
+    <p>
+      <a onclick="history.back()" class="btn btn-default btn-info pull-left">
+        <span class="glyphicon glyphicon-circle-arrow-left"></span> {{ 'Back' | translate }}
+      </a>
+    </p>
+  </div>
 </div>

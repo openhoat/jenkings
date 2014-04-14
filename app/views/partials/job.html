@@ -25,12 +25,21 @@
       <tr ng-repeat="build in job.builds" class="buildRow">
         <td class="index">{{ build.number }}</td>
         <td class="actions">
-          <a href="/build/{{ job.name }}/{{ build.number }}" class="btn btn-default btn-xs btn-success">
+          <a href="/build/{{ job.name }}/{{ build.number }}" class="btn btn-default btn-xs btn-primary">
             <span class="glyphicon glyphicon-info-sign"></span> {{ 'Details' | translate }}
+          </a>
+          <a href="/build/{{ job.name }}/{{ build.number }}/logs" class="btn btn-default btn-xs btn-warning">
+            <span class="glyphicon glyphicon-eye-open"></span> {{ 'Logs' | translate }}
           </a>
         </td>
       </tr>
       </tbody>
     </table>
+    <br/>
+    <p>
+      <a onclick="history.back()" class="btn btn-default btn-info pull-left">
+        <span class="glyphicon glyphicon-circle-arrow-left"></span> {{ 'Back' | translate }}
+      </a>
+    </p>
   </div>
 </div>

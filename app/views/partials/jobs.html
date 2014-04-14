@@ -20,10 +20,10 @@
         <td class="name">{{ job.name }}</td>
         <td class="actions">
           <a href="/job/{{ job.name }}" class="btn btn-default btn-xs btn-success">
-            <span class="glyphicon glyphicon-info-sign" title="{{ 'Details' | translate }}"></span>
+            <span class="glyphicon glyphicon-info-sign"></span> {{ 'Details' | translate }}
           </a>
           <button type="button" ng-click="run(job)" class="btn btn-default btn-xs btn-primary">
-            <span class="glyphicon glyphicon-play" title="{{ 'Play' | translate }}"></span>
+            <span class="glyphicon glyphicon-play"></span> {{ 'Play' | translate }}
           </button>
         </td>
       </tr>

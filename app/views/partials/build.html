@@ -10,8 +10,14 @@
       <li>{{ 'Result' | translate }} : {{ build.result.toLowerCase() | translate }}</li>
       <li>{{ 'Timestamp' | translate }} : {{ build.timestamp }}</li>
     </ul>
-    <a href="/build/{{ jobName }}/{{ build.number }}/logs" class="btn btn-default btn-xs btn-info">
-      <span class="glyphicon glyphicon-eye-open"></span> {{ 'Logs' | translate }}
-    </a>
+    <br/>
+    <p>
+      <a href="/build/{{ jobName }}/{{ build.number }}/logs" class="btn btn-default btn-warning pull-right">
+        <span class="glyphicon glyphicon-eye-open"></span> {{ 'Logs' | translate }}
+      </a>
+      <a onclick="history.back()" class="btn btn-default btn-info pull-left">
+        <span class="glyphicon glyphicon-circle-arrow-left"></span> {{ 'Back' | translate }}
+      </a>
+    </p>
   </div>
 </div>
