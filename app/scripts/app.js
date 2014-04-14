@@ -43,7 +43,7 @@ angular.module('app', [
       prefix: '/languages/',
       suffix: '.json'
     });
-    //$translateProvider.preferredLanguage('fr');
+    $translateProvider.preferredLanguage(window.navigator.userLanguage || window.navigator.language);
   })
   .run(function ($rootScope, $location, $localStorage, $translate) {
     $rootScope.jenkinsBaseUrl = $localStorage.jenkinsBaseUrl || 'http://ci.myserver.com/';
