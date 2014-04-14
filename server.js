@@ -1,6 +1,8 @@
 'use strict';
 
-var express = require('express');
+var http = require('http')
+  , express = require('express')
+  , config, app, httpServer;
 
 /**
  * Main application file
@@ -10,9 +12,9 @@ var express = require('express');
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Application Config
-var config = require('./lib/config/config');
+config = require('./lib/config/config');
 
-var app = express();
+app = express();
 
 // Express settings
 require('./lib/config/express')(app);
@@ -21,9 +23,23 @@ require('./lib/config/express')(app);
 require('./lib/routes')(app);
 
 // Start server
-app.listen(config.port, function () {
-  console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
-});
+httpServer = http.createServer(app);
+
+if (config.server.socket) {
+  httpServer.listen(config.server.socket, function () {
+    console.log('Http server listening on socket %s in %s mode', config.server.socket, app.get('env'));
+  });
+} else {
+  if (config.server.hostname) {
+    httpServer.listen(config.server.port, config.server.hostname, function () {
+      console.log('Http server listening on %s port %d in %s mode', config.server.hostname, config.server.port, app.get('env'));
+    });
+  } else {
+    httpServer.listen(config.server.port, function () {
+      console.log('Http server listening on port %d in %s mode', config.server.port, app.get('env'));
+    });
+  }
+}
 
 // Expose app
 exports = module.exports = app;
