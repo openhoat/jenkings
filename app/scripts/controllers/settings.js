@@ -15,6 +15,7 @@ angular.module('app')
       $localStorage.apiToken = $rootScope.apiToken;
       $localStorage.defaultView = $rootScope.defaultView;
       $localStorage.refreshFreq = $rootScope.refreshFreq;
+      $rootScope.menu = null;
       $location.path('/');
     };
   });
