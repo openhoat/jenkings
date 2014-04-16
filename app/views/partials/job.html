@@ -2,7 +2,7 @@
 <div id="jobDetails" class="panel panel-default">
   <div class="panel-heading">{{ 'Health report' | translate }}</div>
   <div class="panel-body">
-    <img class="health" src="{{ '/images/jenkins/' + job.healthReport[0].iconUrl }}">
+    <img class="health" ng-src="/images/jenkins/{{ job.healthReport[0].iconUrl }}">
     <ul>
       <li>{{ job.healthReport[0].description }}</li>
       <li>{{ 'Score' | translate }} : {{ job.healthReport[0].score }}</li>

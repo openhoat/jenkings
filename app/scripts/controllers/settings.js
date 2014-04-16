@@ -2,7 +2,10 @@
 
 angular.module('app')
   .controller('SettingsCtrl', function ($rootScope, $scope, $location, $localStorage) {
+    $scope.password = $rootScope.decrypt($localStorage.jenkinsPassword);
+
     $scope.save = function () {
+      $rootScope.password = $rootScope.encrypt($scope.password);
       if ($rootScope.jenkinsBaseUrl.substring($rootScope.jenkinsBaseUrl.length - 1) === '/') {
         $rootScope.jenkinsBaseUrl = $rootScope.jenkinsBaseUrl.substring(0, $rootScope.jenkinsBaseUrl.length - 1);
       }

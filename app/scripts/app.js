@@ -55,6 +55,24 @@ angular.module('app', [
 
     $rootScope.alerts = [];
 
+    $rootScope.encrypt = function (text) {
+      try {
+        return CryptoJS.AES.encrypt(text, $rootScope.cryptoKey).toString();
+      } catch (err) {
+        console.error(err);
+        return null;
+      }
+    };
+
+    $rootScope.decrypt = function (encryptedText) {
+      try {
+        return CryptoJS.enc.Utf8.stringify(CryptoJS.AES.decrypt(encryptedText, $rootScope.cryptoKey));
+      } catch (err) {
+        console.error(err);
+        return null;
+      }
+    };
+
     $rootScope.addAlert = function (alert, autoCloseDelay, callback) {
       $translate(alert.msg).then(function (msg) {
         var alertIndex;

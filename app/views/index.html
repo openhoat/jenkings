@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
   <link rel="stylesheet" href="styles/main.css">
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-init="$root.cryptoKey = '<%= cryptoKey %>'">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -47,12 +47,11 @@
 <script src="bower_components/ngstorage/ngStorage.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/angular-translate/angular-translate.min.js"></script>
-<script
-    src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<script src="bower_components/CryptoJS/build/rollups/aes.js"></script>
 
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/navbar.js"></script>
-<script src="scripts/controllers/login.js"></script>
 <script src="scripts/controllers/settings.js"></script>
 <script src="scripts/controllers/jobs.js"></script>
 <script src="scripts/controllers/job.js"></script>
