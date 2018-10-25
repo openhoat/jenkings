@@ -28,10 +28,10 @@
     "start": "node server"
   },
   "dependencies": {
-    "express": "3.4.3",
+    "express": "4.15.5",
     "lodash": "2.4.1",
     "ejs": "0.8.4",
-    "request": "2.34.0",
+    "request": "2.81.0",
     "node-cryptojs-aes": "0.4.0"
   },
   "devDependencies": {
