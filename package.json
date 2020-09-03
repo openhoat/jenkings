@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "express": "3.4.3",
-    "lodash": "2.4.1",
+    "lodash": "4.17.17",
     "ejs": "0.8.4",
     "request": "2.34.0",
     "node-cryptojs-aes": "0.4.0"
